@@ -4,7 +4,7 @@ inputs:
   mysql_host:
     description: 'MySQL Host'
     required: true
-  mysql_database:
+  mysql_db:
     description: 'Database to dump schema from'
     required: true
   mysql_user:
