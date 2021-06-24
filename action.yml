@@ -1,0 +1,29 @@
+name: 'db-schema-backup'
+description: 'Dump MySQL DB schema to git repo"'
+inputs:
+  mysql_host:
+    description: 'MySQL Host'
+    required: true
+  mysql_database:
+    description: 'Database to dump schema from'
+    required: true
+  mysql_user:
+    description: 'DB User'
+    required: true
+  mysql_pass:
+    description: "DB Password"
+    required: true
+  schema_path:
+    description: "Path in repo"
+    required: true
+runs:
+  using: 'composite'
+  steps:
+    - run: ${{ github.action_path}}/action.sh
+      shell: bash
+      env:
+        INPUT_MYSQL_HOST: ${{ inputs.mysql_host }}
+        INPUT_MYSQL_DB: ${{ inputs.mysql_db }}
+        INPUT_MYSQL_USER: ${{ inputs.mysql_user }}
+        INPUT_MYSQL_PASS: ${{ inputs.mysql_pass }}
+        INPUT_SCHEMA_PATH: ${{ inputs.schema_path }}
