@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+sudo apt-get -y install mysql-client
+
 git config --global user.name ${INPUT_MYSQL_DB}
 #git config --global user.email ${INPUT_MYSQL_DB}@${INPUT_GIT_HOST}
 
