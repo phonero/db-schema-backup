@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 
+sudu apt update
 sudo apt-get -y install mysql-client
 
 git config --global user.name ${INPUT_MYSQL_DB}
